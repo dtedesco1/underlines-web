@@ -21,7 +21,7 @@ export default function RootLayout({
             <body className="min-h-screen bg-stone-100 text-ink antialiased dark:bg-stone-950 dark:text-stone-100">
                 <div className="flex min-h-screen flex-col">
                     <header className="border-b border-stone-300 bg-white/80 shadow-insetLine backdrop-blur dark:border-stone-700 dark:bg-stone-900/80">
-                        <div className="mx-auto max-w-6xl px-6">
+                        <div className="mx-auto max-w-5xl px-6">
                             <div className="flex flex-col items-center gap-6 py-12 text-center">
                                 <p className="text-[0.65rem] uppercase tracking-widecaps text-ink-muted dark:text-stone-400">
                                     Founded MMXXIV · Independent & Uncompromised
@@ -54,68 +54,46 @@ export default function RootLayout({
                                         Subscribe
                                     </Link>
                                 </nav>
+                                <div className="flex w-full flex-col items-center justify-center gap-4 pt-6 sm:flex-row sm:gap-6">
+                                    <p className="max-w-xl text-xs uppercase tracking-[0.24em] text-ink-muted dark:text-stone-400">
+                                        Join discerning readers receiving global context in their inbox each morning.
+                                    </p>
+                                    <Link
+                                        className="inline-flex items-center justify-center border border-stone-400 bg-white px-6 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.26em] text-ink transition hover:bg-amber-50 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:hover:bg-stone-800"
+                                        href="/subscribe"
+                                    >
+                                        Subscribe Now
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     </header>
                     <main className="flex-1">
-                        <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-12 lg:flex-row">
-                            <article className="prose prose-lg prose-stone max-w-none font-serif dark:prose-invert">
+                        <div className="mx-auto w-full max-w-4xl px-6 py-12">
+                            <article className="prose prose-lg prose-stone mx-auto max-w-3xl font-serif dark:prose-invert">
                                 {children}
                             </article>
-                            <aside className="w-full max-w-lg space-y-6 border-t border-stone-200 pt-6 text-sm dark:border-stone-700 lg:max-w-xs lg:border-t-0 lg:border-l lg:pl-6 lg:pt-0">
-                                <section className="sidebar-card">
-                                    <h2 className="font-masthead text-lg uppercase tracking-tightercaps text-ink dark:text-stone-100">
-                                        The Daily Dispatch
-                                    </h2>
-                                    <p className="mt-4 text-sm leading-relaxed text-ink-muted dark:text-stone-300">
-                                        Receive Underlines every weekday morning with verified facts, long-view context, and analysis that spans ideologies.
-                                    </p>
-                                    <Link
-                                        className="mt-5 inline-flex items-center justify-center border border-stone-400 bg-white px-5 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-ink transition hover:bg-amber-50 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:hover:bg-stone-800"
-                                        href="/subscribe"
-                                    >
-                                        Subscribe Today
-                                    </Link>
-                                </section>
-                                <section className="sidebar-card">
-                                    <h2 className="font-masthead text-lg uppercase tracking-tightercaps text-ink dark:text-stone-100">
-                                        Edition Highlights
-                                    </h2>
-                                    <ul className="mt-4 space-y-3 text-sm leading-relaxed text-ink-muted dark:text-stone-300">
-                                        <li>
-                                            <span className="block font-semibold text-ink dark:text-stone-100">Global Power Index</span>
-                                            Weekly indicators tracking shifts in alliances, security, and trade.
-                                        </li>
-                                        <li>
-                                            <span className="block font-semibold text-ink dark:text-stone-100">Historical Echoes</span>
-                                            Parallels between today’s headlines and pivotal moments across centuries.
-                                        </li>
-                                        <li>
-                                            <span className="block font-semibold text-ink dark:text-stone-100">Perspective Ledger</span>
-                                            Cross-spectrum media analysis to surface bias and blind spots.
-                                        </li>
-                                    </ul>
-                                </section>
-                                <section className="sidebar-card">
-                                    <h2 className="font-masthead text-lg uppercase tracking-tightercaps text-ink dark:text-stone-100">
-                                        From The Archive
-                                    </h2>
-                                    <p className="mt-4 text-sm leading-relaxed text-ink-muted dark:text-stone-300">
-                                        Explore decades of geopolitical pivots with our searchable, annotated dossier library.
-                                    </p>
-                                    <Link
-                                        className="mt-4 inline-flex items-center justify-center text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-ink underline decoration-ink/40 underline-offset-4 hover:decoration-ink dark:text-stone-100"
-                                        href="/archives"
-                                    >
-                                        Browse Archives
-                                    </Link>
-                                </section>
-                            </aside>
                         </div>
                     </main>
-                    <footer className="border-t border-stone-300 bg-white/80 py-10 text-sm text-ink-muted shadow-insetLine backdrop-blur dark:border-stone-700 dark:bg-stone-900/80 dark:text-stone-400">
-                        <div className="mx-auto max-w-6xl px-6">
-                            <div className="grid gap-8 text-center sm:grid-cols-3 sm:text-left">
+                    <footer className="border-t border-stone-300 bg-white/80 py-12 text-sm text-ink-muted shadow-insetLine backdrop-blur dark:border-stone-700 dark:bg-stone-900/80 dark:text-stone-400">
+                        <div className="mx-auto max-w-5xl px-6">
+                            <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
+                                <div>
+                                    <h2 className="font-masthead text-base uppercase tracking-tightercaps text-ink dark:text-stone-100">
+                                        Subscribe to Underlines
+                                    </h2>
+                                    <p className="mt-2 max-w-lg text-xs uppercase tracking-[0.22em] text-ink-muted dark:text-stone-400">
+                                        Receive curated analysis and historical context delivered with restraint and rigor.
+                                    </p>
+                                </div>
+                                <Link
+                                    className="inline-flex items-center justify-center border border-stone-400 bg-white px-5 py-2 text-[0.75rem] font-semibold uppercase tracking-[0.26em] text-ink transition hover:bg-amber-50 dark:border-stone-600 dark:bg-stone-900 dark:text-stone-100 dark:hover:bg-stone-800"
+                                    href="/subscribe"
+                                >
+                                    Become a Subscriber
+                                </Link>
+                            </div>
+                            <div className="mt-10 grid gap-8 text-center sm:grid-cols-3 sm:text-left">
                                 <div>
                                     <h3 className="font-masthead text-sm uppercase tracking-tightercaps text-ink dark:text-stone-100">Editorial Desk</h3>
                                     <p className="mt-3 leading-relaxed">

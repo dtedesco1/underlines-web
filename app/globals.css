@@ -59,7 +59,4 @@
         bottom: 0;
     }
 
-    .sidebar-card {
-        @apply border border-stone-300 bg-white/80 p-6 shadow-insetLine backdrop-blur dark:border-stone-700 dark:bg-stone-900/80;
-    }
 }
