@@ -1,3 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        color-scheme: light;
+    }
+
+    :root.dark {
+        color-scheme: dark;
+    }
+
+    html {
+        @apply bg-stone-100 text-ink antialiased dark:bg-stone-950 dark:text-stone-100;
+    }
+
+    body {
+        @apply min-h-screen bg-transparent font-sans text-base leading-relaxed;
+    }
+
+    a {
+        @apply text-ink underline decoration-ink/40 underline-offset-4 transition-colors hover:decoration-ink dark:text-stone-100 dark:decoration-stone-400 dark:hover:decoration-stone-200;
+    }
+
+    strong {
+        @apply text-ink dark:text-stone-100;
+    }
+
+    ::selection {
+        @apply bg-amber-200 text-ink dark:bg-amber-400/40;
+    }
+}
+
+@layer components {
+    .newspaper-ornament {
+        position: relative;
+    }
+
+    .newspaper-ornament::before,
+    .newspaper-ornament::after {
+        position: absolute;
+        inset-inline: 0;
+        height: 1px;
+        background-image: linear-gradient(
+            to right,
+            rgba(28, 25, 23, 0.1),
+            rgba(28, 25, 23, 0.4),
+            rgba(28, 25, 23, 0.1)
+        );
+        content: '';
+    }
+
+    .newspaper-ornament::before {
+        top: 0;
+    }
+
+    .newspaper-ornament::after {
+        bottom: 0;
+    }
+
+    .sidebar-card {
+        @apply border border-stone-300 bg-white/80 p-6 shadow-insetLine backdrop-blur dark:border-stone-700 dark:bg-stone-900/80;
+    }
+}
