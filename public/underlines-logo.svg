@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Underlines monogram</title>
+  <desc id="desc">A lowercase letter u with a fine underline on a dark field.</desc>
+  <rect width="160" height="160" fill="#0e0b09"/>
+  <g transform="translate(30 22)">
+    <path d="M20 30v45c0 18 10 30 28 30s28-12 28-30V30h-14v45c0 10-4.5 16-14 16s-14-6-14-16V30z" fill="#f5f1ea"/>
+    <rect x="10" y="110" width="80" height="6" rx="2" fill="#f5f1ea"/>
+  </g>
+</svg>
