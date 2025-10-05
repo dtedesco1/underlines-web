@@ -12,15 +12,19 @@
     }
 
     html {
-        @apply bg-stone-100 text-ink antialiased dark:bg-stone-950 dark:text-stone-100;
+        @apply bg-parchment text-ink antialiased dark:bg-stone-950 dark:text-stone-100;
+        background-image: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.7), rgba(244, 239, 230, 0.6) 45%, rgba(206, 193, 174, 0.4)),
+            linear-gradient(120deg, rgba(209, 199, 184, 0.3) 0%, rgba(255, 255, 255, 0.2) 55%, rgba(225, 214, 196, 0.3) 100%);
+        background-attachment: fixed;
     }
 
     body {
         @apply min-h-screen bg-transparent font-sans text-base leading-relaxed;
+        text-rendering: optimizeLegibility;
     }
 
     a {
-        @apply text-ink underline decoration-ink/40 underline-offset-4 transition-colors hover:decoration-ink dark:text-stone-100 dark:decoration-stone-400 dark:hover:decoration-stone-200;
+        @apply text-oxblood underline decoration-oxblood/40 underline-offset-4 transition-colors hover:decoration-oxblood dark:text-stone-100 dark:decoration-stone-400 dark:hover:decoration-stone-200;
     }
 
     strong {
@@ -28,7 +32,34 @@
     }
 
     ::selection {
-        @apply bg-amber-200 text-ink dark:bg-amber-400/40;
+        @apply bg-oxblood/20 text-ink dark:bg-amber-400/40;
+    }
+
+    .prose {
+        @apply font-serif text-lg leading-8 text-ink dark:text-stone-100;
+    }
+
+    .prose :where(p:first-of-type)::first-letter {
+        font-family: var(--font-display);
+        font-size: 3.75rem;
+        line-height: 1;
+        float: left;
+        margin: 0.2rem 0.4rem 0 0.1rem;
+        padding: 0.1rem 0.3rem;
+        color: #1f1b16;
+        background: rgba(126, 45, 36, 0.08);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+    }
+
+    .prose :where(blockquote) {
+        @apply border-l-4 border-oxblood/40 bg-parchment/80 px-6 py-4 italic text-ink dark:border-stone-500 dark:bg-stone-900/60;
+    }
+
+    .prose :where(hr) {
+        @apply border-0;
+        height: 2px;
+        background-image: linear-gradient(90deg, rgba(31, 27, 22, 0), rgba(31, 27, 22, 0.5), rgba(31, 27, 22, 0));
     }
 }
 
@@ -58,5 +89,4 @@
     .newspaper-ornament::after {
         bottom: 0;
     }
-
 }

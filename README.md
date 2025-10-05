@@ -17,7 +17,7 @@ I'm lazy, so I made this extremely simple.
 
 ### Pages
 
-Just write some markdown in a `.mdx` file, and it will automatically become a properly styled page.
+Just write some markdown in a `.mdx` file (plain Markdown works too), and it will automatically become a properly styled page.
 
 ```mdx
 # My Page
@@ -29,7 +29,7 @@ This is my page.
 
 Add new pages by creating `.mdx` files in the `app/content` directory. The file name becomes the URL path:
 
-- `app/content/index.mdx` → `/`
+- `app/content/articles/2024-07-15-field-notes.mdx` → `/articles/2024-07-15-field-notes`
 - `app/content/a-beautiful-page.mdx` → `/a-beautiful-page`
 - `app/content/more-content/another-page.mdx` → `/more-content/another-page`
 
@@ -114,23 +114,31 @@ my-markdown-app/
 .
 ├── README
 ├── app
-│   ├── [...slug]     # Dynamic route for all pages
-│   │   └── page.tsx    # Page component
-│   ├── content        # **This is the only folder you need to worry about.**
-│   │   ├── more-content  # Example of a nested folder
+│   ├── [...slug]         # Dynamic route for all pages
+│   │   └── page.tsx        # Page component
+│   ├── content            # **This is the only folder you need to worry about.**
+│   │   ├── articles         # Newsletter issues live here
+│   │   │   ├── 2024-06-01-welcome-to-underlines.mdx
+│   │   │   └── 2024-07-15-field-notes.mdx
+│   │   ├── more-content     # Example of a nested folder
 │   │   │   └── another-page.mdx  # Another page, routes to /more-content/another-page
-│   │   └── index.mdx  # Home page content
-│   ├── globals.css    # Global styles and Tailwind imports
-│   ├── layout.tsx     # Root layout with shared styling
-│   └── page.mdx       # Home page content (renders index.mdx at root)
-├── components       # Add custom React components in this directory
-├── mdx-components.tsx # Sets up MDX components
-├── next.config.mjs    # Next.js configuration  
-├── package.json       # Project dependencies
-├── postcss.config.js  # PostCSS configuration
-├── tailwind.config.js # Tailwind CSS configuration
-└── tsconfig.json      # TypeScript configuration
+│   ├── globals.css        # Global styles and Tailwind imports
+│   ├── layout.tsx         # Root layout with shared styling
+│   └── page.tsx           # Home page that renders the latest article automatically
+├── components           # Add custom React components in this directory
+├── mdx-components.tsx   # Sets up MDX components
+├── next.config.mjs      # Next.js configuration
+├── package.json         # Project dependencies
+├── postcss.config.js    # PostCSS configuration
+├── tailwind.config.js   # Tailwind CSS configuration
+└── tsconfig.json        # TypeScript configuration
 ```
+
+### Newsletter workflow
+
+1. Create a new Markdown (save it with a `.mdx` extension) file inside `app/content/articles/`. Use any naming convention you like—adding the date helps keep things organized.
+2. Commit or copy the file to the project. No additional imports or updates are necessary.
+3. The homepage (`/`) automatically loads the most recently modified file from `app/content/articles/`, so the latest issue is always featured.
 
 ## Contributing
 
